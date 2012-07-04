@@ -5,7 +5,7 @@ import java.util.List;
 import ph.com.shinra.datasource.admin.model.Department;
 import ph.com.shinra.datasource.admin.service.DepartmentService;
 import ph.com.shinra.datasource.common.service.GenericService;
-import ph.com.shinra.datasource.utils.ApplicationContextUtils;
+import ph.com.shinra.datasource.common.utils.ApplicationContextUtils;
 
 public class TestMain {
 	

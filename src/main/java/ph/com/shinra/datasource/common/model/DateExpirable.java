@@ -4,7 +4,7 @@ import java.util.Date;
 
 import org.apache.commons.lang3.time.DateUtils;
 
-import ph.com.shinra.datasource.utils.CoreDateUtils;
+import ph.com.shinra.datasource.common.utils.CoreDateUtils;
 
 /**
  * {@link Date} based implementation of the {@link Expirable} interface.</br>

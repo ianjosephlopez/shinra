@@ -1,4 +1,4 @@
-package ph.com.shinra.datasource.utils;
+package ph.com.shinra.datasource.common.utils;
 
 import java.util.Calendar;
 import java.util.Date;

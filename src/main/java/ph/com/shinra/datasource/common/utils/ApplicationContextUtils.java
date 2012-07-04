@@ -1,4 +1,4 @@
-package ph.com.shinra.datasource.utils;
+package ph.com.shinra.datasource.common.utils;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
