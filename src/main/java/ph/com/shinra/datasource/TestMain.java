@@ -17,7 +17,7 @@ public class TestMain {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext(contextXml);
 		
 		GenericService<Department, Long> deptService = (GenericService<Department, Long>) ctx.getBean("departmentService");
-		deptService.create(new Department("Sub 2", "lkdhsdfbdfkdjgbdfgbjfbgkjbg", null));
+		deptService.create(new Department("Sub 3", "lkdhsdfbdfkdjgbdfgbjfbgkjbg", null));
 		
 		DepartmentService deptSearchService = (DepartmentService) ctx.getBean("departmentService");
 		List<Department> list = deptSearchService.search();
