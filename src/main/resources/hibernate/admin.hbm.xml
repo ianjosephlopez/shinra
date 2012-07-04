@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+								   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="ph.com.shinra.datasource.admin.model">
+    <!-- CLASS DEFINITIONS -->
+    <class name="Department" table="DEPARTMENTS">
+        <id name="id" type="long">
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string" not-null="true"/>
+        <property name="description" type="string"/>
+        <many-to-one name="parent" class="Department"/>
+    </class>
+    <class name="Employee" table="EMPLOYEES">
+        <id name="id" type="long">
+            <generator class="identity" />
+        </id>
+        <property name="lastName" type="string"/>
+        <property name="firstName" type="string"/>
+        <property name="middleName" type="string"/>
+        
+        <property name="dateHired" type="date"/>
+        <property name="dateResigned" type="date"/>
+        <property name="dateOfBirth" type="date"/>
+        
+        <property name="externalId" type="string"/>
+        
+        <property name="gender" type="character"/>
+        <property name="civilStatus" type="character"/>
+        
+        <property name="tinNumber" column="tin" type="string"/>
+    </class>
+    <!-- END OF CLASS DEFINITIONS -->
+    
+    <!-- QUERY DEFINITIONS -->
+    <query name="departments">
+    	FROM Department
+    	ORDER BY name ASC
+    </query>
+    <!-- END OF QUERY DEFINITIONS -->
+</hibernate-mapping>

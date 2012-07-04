@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+								   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="ph.com.shinra.datasource.common.model">
+    <!-- CLASS DEFINITIONS -->
+    <class name="BusinessCode" table="CODE">
+    	<id name="id" type="long">
+    		<generator class="identity"/>
+    	</id>
+    	<property name="codeType" type="string"/>
+		<property name="code" type="string"/>
+		<property name="language" type="string"/>
+		<property name="description" type="string"/>
+		<property name="fromDate" type="date"/>
+        <property name="untilDate" type="date"/>
+    </class>
+    <class name="LogEntry" table="LOGENTRY">
+   	   	<id name="id" type="long">
+            <generator class="identity" />
+        </id>
+   	   	<property name="entryStamp" type="timestamp" not-null="true"/>
+	   	<property name="rowId" type="long" not-null="true"/>
+	   	<property name="tableName" type="string" not-null="true"/>
+	   	<property name="employeeId" type="long" not-null="true"/>
+	   	<property name="operationType" type="string" not-null="true"/>
+    </class>
+    <!-- END OF CLASS DEFINITIONS -->
+    
+    <!-- QUERY DEFINITIONS -->
+    <query name="codeByCodeTypeAndLanguage">
+    	FROM BusinessCode
+    	WHERE codeType = :codeType
+    	AND language = :language
+    	ORDER BY code ASC
+    </query>
+    <query name="logEntries">
+    	FROM LogEntry 
+    	ORDER BY entryStamp DESC
+    </query>
+    <query name="logEntriesByDateRange">
+    	FROM LogEntry 
+    	WHERE day(entryStamp) 
+    	BETWEEN day(:fromDate) AND day(:toDate)
+    	ORDER BY entryStamp DESC
+    </query>
+    <query name="logEntriesByTableName">
+    	FROM LogEntry 
+    	WHERE tableName = :tableName
+    	ORDER BY entryStamp DESC
+    </query>
+    <query name="logEntriesByEmployeeId">
+    	FROM LogEntry 
+    	WHERE employeeId = :employeeId
+    	ORDER BY entryStamp DESC
+    </query>
+    <query name="logEntriesByTableNameAndRowId">
+    	FROM LogEntry 
+    	WHERE tableName = :tableName
+    	AND rowId = :rowId
+    	ORDER BY entryStamp DESC
+    </query>
+    <query name="logEntriesByTableNameAndEmployeeId">
+    	FROM LogEntry 
+    	WHERE tableName = :tableName
+    	AND employeeId = :employeeId
+    	ORDER BY entryStamp DESC
+    </query>
+    <!-- END OF QUERY DEFINITIONS -->
+</hibernate-mapping>
