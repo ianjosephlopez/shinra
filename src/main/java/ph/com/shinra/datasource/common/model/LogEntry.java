@@ -61,4 +61,15 @@ public class LogEntry extends AbstractModel<Long> {
 	public void setOperationType(String operationType) {
 		this.operationType = operationType;
 	}
+
+	@Override
+	public String toString() {
+		return "LogEntry [" 
+				+ "id=" + getId() + CONST_STRING_SEPARATOR
+				+ "entryStamp=" + getEntryStamp() + CONST_STRING_SEPARATOR
+				+ "tableName=" + getTableName() + CONST_STRING_SEPARATOR
+				+ "employeeId=" + getEmployeeId() + CONST_STRING_SEPARATOR 
+				+ "operationType=" + getOperationType()
+				+ "]\n";
+	}
 }

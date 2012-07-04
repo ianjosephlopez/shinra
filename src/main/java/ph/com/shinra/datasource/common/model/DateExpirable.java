@@ -18,6 +18,8 @@ public class DateExpirable implements Expirable {
 	
 	private Date fromDate, untilDate;
 	
+	protected static final String CONST_STRING_SEPARATOR = ", ";
+	
 	/**
 	 * Constructs an {@link Expirable} that never expires.
 	 */

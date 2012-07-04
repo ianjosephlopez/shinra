@@ -54,10 +54,14 @@ public class BusinessCode extends DateExpirable implements Serializable {
 
 	@Override
 	public String toString() {
-		return "BusinessCode [getId()=" + getId() + ", getCode()=" + getCode()
-				+ ", getCodeType()=" + getCodeType() + ", getLanguage()="
-				+ getLanguage() + ", getDescription()=" + getDescription()
-				+ ", getFromDate()=" + getFromDate() + ", getUntilDate()="
-				+ getUntilDate() + "]\n";
+		return "BusinessCode [" 
+				+ "id=" + getId() + CONST_STRING_SEPARATOR
+				+ "code=" + getCode() + CONST_STRING_SEPARATOR
+				+ "codeType=" + getCodeType() + CONST_STRING_SEPARATOR
+				+ "language=" + getLanguage() + CONST_STRING_SEPARATOR 
+				+ "description=" + getDescription() + CONST_STRING_SEPARATOR
+				+ "fromDate=" + getFromDate() + CONST_STRING_SEPARATOR
+				+ "untilDate="+ getUntilDate() 
+				+ "]\n";
 	}
 }

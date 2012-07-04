@@ -48,10 +48,10 @@ public class Department extends AbstractModel<Long> {
 	@Override
 	public String toString() {
 		return "Department [" 
-					+ "Id=" + getId() + CONST_STRING_SEPARATOR 
-					+ "name=" + getName() + CONST_STRING_SEPARATOR 
-					+ "description=" + getDescription() + CONST_STRING_SEPARATOR
-					+ "parent=" + getParent() + 
-			   "]\n";
+				+ "Id=" + getId() + CONST_STRING_SEPARATOR 
+				+ "name=" + getName() + CONST_STRING_SEPARATOR 
+				+ "description=" + getDescription() + CONST_STRING_SEPARATOR
+				+ "parent=" + getParent()
+				+ "]\n";
 	}
 }

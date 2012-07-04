@@ -30,6 +30,19 @@
         <property name="civilStatus" type="character"/>
         
         <property name="tinNumber" column="tin" type="string"/>
+        
+        <set name="employeeContact" table="EMPLOYEE_CONTACTS" lazy="false" inverse="true" cascade="all-delete-orphan">
+        	<key column="employee_id"/>
+        	<one-to-many class="EmployeeContact"/>
+        </set>
+    </class>
+    <class name="EmployeeContact" table="EMPLOYEE_CONTACTS">
+    	<id name="id" type="long">
+            <generator class="identity"/>
+        </id>
+        <many-to-one name="employee" class="Employee" column="employee_id" fetch="join" lazy="false"/>
+        <many-to-one name="type" class="ph.com.shinra.datasource.common.model.BusinessCode" fetch="join" lazy="false"/>
+        <property name="details" type="string"/>
     </class>
     <!-- END OF CLASS DEFINITIONS -->
     
