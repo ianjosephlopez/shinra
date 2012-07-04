@@ -8,9 +8,23 @@
 
 	<repositories>
 		<repository>
-			<id>nexus</id>
-			<url>http://10.63.1.165:8081/nexus/content/groups/public</url>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>http://repo.maven.apache.org/maven2</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
 		</repository>
+		<!--
+			Eventually there will be a need to Setup our own Nexus.
+			 
+			<repository>
+			<id>nexus</id>
+			<name>Nexus Repository</name>
+			<url>http://10.63.1.165:8081/nexus/content/groups/public</url>
+		</repository> 
+		-->
 	</repositories>
 
 	<properties>
@@ -82,10 +96,10 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.19</version>
+			<version>5.1.20</version>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 		<!-- TEST dependencies -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -106,7 +120,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
